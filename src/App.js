@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <Navbar 
-      title="TextUtilesss"
+      title="TextChange"
        About="About Us"
       />
       <div className='container my-3' >

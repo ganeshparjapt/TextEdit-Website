@@ -6,6 +6,18 @@ export default function TextForm(props) {
     let newText = text.toUpperCase();
     setText(newText)
   }
+  const handelUpClickToLover=()=>{
+    console.log("lover case change");
+    let newText = text.toLocaleLowerCase();
+    setText(newText)
+  }
+  const Remove=()=>{
+    console.log("Remove press");
+    let remover = text.replace();
+    setText(remover)
+  }
+
+
   const handleOnChange=(event)=>{
     console.log("on change");
     setText(event.target.value);
@@ -27,6 +39,9 @@ export default function TextForm(props) {
           
           </textarea>
           <button className="btn btn-primary my-3"onClick={handelUpClick}>Convert upper Case</button>
+          <button className="btn btn-primary my-3 mx-3"onClick={handelUpClickToLover}>Convert to Lover case</button>
+          <button className="btn btn-primary my-3 mx-3"onClick={Remove}>Clear Text</button>
+          
       </div>
     </div>
   );
