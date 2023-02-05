@@ -13,7 +13,7 @@ function App() {
        About="About Us"
       />
       <div className='container my-3' >
-      <TextForm  Heading="Enter text here"/>
+      <TextForm  Heading="Enter the text hear to analyze below "/>
       </div>
     </>
     

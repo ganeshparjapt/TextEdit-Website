@@ -28,14 +28,14 @@ export default function TextForm(props) {
   // text="Etner tex hear  " This is rong way for enter text
   // setText("new text is");
   return (
-    <div>
+    <>    <div className='container mx-1'>
         <h1>{props.Heading}</h1>
-      <div className="mb-3">
+      <div className="mb-1">
           <textarea
           className="form-control"
           id="exampleFormControlTextarea1"
           value={text} onChange={handleOnChange} 
-          rows="10">
+          rows="6">
           
           </textarea>
           <button className="btn btn-primary my-3"onClick={handelUpClick}>Convert upper Case</button>
@@ -44,5 +44,14 @@ export default function TextForm(props) {
           
       </div>
     </div>
+    <div className='container'>
+      <h2>Your text Summary </h2>
+      <p> Count word is :  {text.split(" ").length} and Count charecters : {text.length}</p>
+      <p>{0.008*text.split(" ").length} Minutes read</p>
+      <h2>Preview</h2>
+      <p>{text}</p>
+    </div>
+    </>
+
   );
 }
