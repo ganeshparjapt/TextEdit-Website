@@ -13,8 +13,13 @@ export default function TextForm(props) {
   }
   const Remove=()=>{
     console.log("Remove press");
-    let remover = text.replace();
-    setText(remover)
+   let newText=" ";
+   setText(newText)
+  }
+  const SpaceBetweenOnclick=()=>{
+    console.log("space between");
+    let newText=text.endsWith();
+    setText(newText);
   }
 
 
@@ -41,6 +46,7 @@ export default function TextForm(props) {
           <button className="btn btn-primary my-3"onClick={handelUpClick}>Convert upper Case</button>
           <button className="btn btn-primary my-3 mx-3"onClick={handelUpClickToLover}>Convert to Lover case</button>
           <button className="btn btn-primary my-3 mx-3"onClick={Remove}>Clear Text</button>
+          <button className="btn btn-primary my-3 mx-3"onClick={SpaceBetweenOnclick}>Space between</button>
           
       </div>
     </div>
