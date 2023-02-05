@@ -24,7 +24,7 @@ export default function TextForm(props) {
 
   }
 
-  const [text, setText] = useState('Enter text hear');
+  const [text, setText] = useState('');
   // text="Etner tex hear  " This is rong way for enter text
   // setText("new text is");
   return (
