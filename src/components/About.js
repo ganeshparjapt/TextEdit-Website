@@ -3,26 +3,34 @@ import React, { useState } from "react";
 export default function About() {
     const[myStyle,setmyStyle]=useState({
   
-    color: "white",
-    backgroundColor: "black",
+    color: "black",
+    backgroundColor: "white",
+    
   });
+  const[btnText,SetBtnmode]=useState("Enable Dark Mode")
+  
   const toggle = ()=>{
-    if(myStyle.color == 'white'){
+    if(myStyle.color === 'white'){
         setmyStyle({
             color:'black',
-            backgroundColor:'white'
+            backgroundColor:'white',
+            
         })
+        SetBtnmode("Enable dark Mode")
     }
     else{
         setmyStyle({
             color:'white',
-            backgroundColor:'black'
+            backgroundColor:'black',
+            border: '2px solid white'
         })
+        SetBtnmode("Enable Light Mode")
+
     }
   }
   return (
     <>
-    
+    <nav className="container"    style={myStyle}>
       <nav
         id="navbar-example2"
         className="navbar bg-body-tertiary px-3 mb-3"
@@ -94,8 +102,9 @@ export default function About() {
         <p>...ganesh is good boy</p>
         <h4 id="scrollspyHeading5"style={myStyle}>Fifth heading</h4>
         <p>...ganesh is good boy</p>
-        <button type="button" class="btn btn-primary"onClick={toggle} style={myStyle}>To dark mode</button>
+        <button type="button" class="btn btn-primary"onClick={toggle} style={myStyle} >{btnText}</button>
       </div>
+      </nav>
     </>
   );
 }
