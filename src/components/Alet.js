@@ -6,7 +6,7 @@ export default function Alet(props) {
         return lower.charAt(0).toUpperCase()+lower.slice(1);
     }
   return (
-    props.Alert && <div className={`alert alert-${props.Alert.type} alert-dismissible fade show `}role="alert">
+    props.Alert && <div className={`alert alert-${props.Alert.type} alert-dismissible fade show dark `}role="alert">
  <strong>{capitalixe( props.Alert.type)}</strong> :{props.Alert.msg}
 
 </div>

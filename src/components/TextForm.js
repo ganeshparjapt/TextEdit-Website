@@ -5,25 +5,33 @@ export default function TextForm(props) {
     console.log("upper case change");
     let newText = text.toUpperCase();
     setText(newText);
+    props.showAlert("Upper cash change success fully", "success")
   };
   const handelUpClickToLover = () => {
     console.log("lover case change");
     let newText = text.toLocaleLowerCase();
     setText(newText);
+    props.showAlert("converted to Lover case", "success")
+
   };
   const Remove = () => {
     console.log("Remove press");
     let newText = " ";
     setText(newText);
+
   };
   const SpaceBetweenOnclick = () => {
     console.log("space between");
     let newText = text.split(/[ ]+/);
     setText(newText.join(" "));
+    props.showAlert("space beetween removed", "success")
+
   };
   const handelCopy = () => {
-    navigator.clipboard.writeText(text); 
-  }
+    navigator.clipboard.writeText(text);
+    props.showAlert("Text copyed", "success")
+
+  };
 
   const handleOnChange = (event) => {
     console.log("on change");
@@ -35,8 +43,10 @@ export default function TextForm(props) {
   // setText("new text is");
   return (
     <>
-    
-      <div className="container mx-1" style={{color:props.mode==='light'?'black':'white'}}>
+      <div
+        className="container mx-1"
+        style={{ color: props.mode === "light" ? "black" : "white" }}
+      >
         <h1>{props.Heading}</h1>
         <div className="mb-1">
           <textarea
@@ -45,7 +55,10 @@ export default function TextForm(props) {
             value={text}
             onChange={handleOnChange}
             rows="5"
-            style={{backgroundColor:props.mode==='light'?'white':'#1a1924b8',color:props.mode==='light'?'black':'white'}}
+            style={{
+              backgroundColor: props.mode === "light" ? "white" : "#1a1924b8",
+              color: props.mode === "light" ? "black" : "white",
+            }}
           ></textarea>
           <button className="btn btn-primary my-3" onClick={handelUpClick}>
             Convert upper Case
@@ -70,7 +83,10 @@ export default function TextForm(props) {
           </button>
         </div>
       </div>
-      <div className="container" style={{color:props.mode==='light'?'black':'white'}}>
+      <div
+        className="container"
+        style={{ color: props.mode === "light" ? "black" : "white" }}
+      >
         <h2>Your text Summary </h2>
         <p>
           {" "}
@@ -79,7 +95,7 @@ export default function TextForm(props) {
         </p>
         <p>{0.008 * text.split(" ").length} Minutes read</p>
         <h2>Preview</h2>
-        <p>{text.length>0? text: "Enter somthing to preview hear"}</p>
+        <p>{text.length > 0 ? text : "Enter somthing to preview hear"}</p>
       </div>
     </>
   );

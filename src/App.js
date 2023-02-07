@@ -1,6 +1,6 @@
 // import logo from './logo.svg';
 import { useState } from 'react';
-import { unstable_renderSubtreeIntoContainer } from 'react-dom';
+
 import './App.css';
 import Alet from './components/Alet';
 // import About from './components/About';
@@ -19,7 +19,11 @@ function App() {
       msg: massage,
       type: type
     })
+ 
   }
+  setTimeout(() => {
+    setAlert(null);
+  }, 1000);
   
  const togglemode=()=>{
   if(mode === 'light'){
@@ -43,7 +47,7 @@ function App() {
       />
        <Alet Alert={alert}/> 
       <div className='container my-3' >
-      <TextForm  Heading="Enter the text hear to analyze below " mode={mode}/>
+      <TextForm showAlert={showAlert}  Heading="Enter the text hear to analyze below " mode={mode}/>
       {/* <About/> */}
      
       </div>
