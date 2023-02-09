@@ -8,7 +8,7 @@ import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 import React from "react";
 import {
-  BrowserRouter, Route, Link,Router,Routes
+  BrowserRouter, Route ,Router,Routes
   
 } from "react-router-dom";
 
@@ -44,7 +44,7 @@ function App() {
   };
   return (
     <>
-       <Router>
+       <BrowserRouter>
         <Navbar
           title="TextChange"
           About="About Us"
@@ -65,7 +65,7 @@ function App() {
 
         </div>
 
-        </Router>
+        </BrowserRouter>
         </>
          
   
