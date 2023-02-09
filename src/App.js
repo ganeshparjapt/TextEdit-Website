@@ -6,7 +6,12 @@ import Alet from "./components/Alet";
 import About from "./components/About";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import React from "react";
+import {
+  BrowserRouter, Route, Link,Router,Routes
+  
+} from "react-router-dom";
+
 
 
 
@@ -48,18 +53,21 @@ function App() {
         />
         <Alet Alert={alert} />
         <div className="container my-3">
-          <Switch>
-            <Route path="/about">
-              <About />
-            </Route>
-            <Route path="/">
-              <TextForm
-                showAlert={showAlert} Heading="Enter the text hear to analyze below " mode={mode}/>                  
-            </Route>
-          </Switch>
+        <Routes>
+          <Route exact path="/about" element={<About />} />
+          {/* <Route path="/login" caseSensitive={false} element={<Login />} /> */}
+          
+
+        <Route exact path='/' element={<TextForm showAlert={showAlert} Heading="Enter the text hear to analyze below " mode={mode}/> }>
+
+          </Route>
+        </Routes>
+
         </div>
+
         </Router>
         </>
+         
   
   );
 }

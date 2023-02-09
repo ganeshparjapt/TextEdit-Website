@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import{Link} from"react-router-dom"
+
 
 export default function About() {
     const[myStyle,setmyStyle]=useState({
@@ -36,9 +38,9 @@ export default function About() {
         className="navbar bg-body-tertiary px-3 mb-3"
         style={myStyle}
       >
-        <a className="navbar-brand" href="/"style={myStyle}>
+        <Link className="navbar-brand" to="/about"style={myStyle}>
           Navbar
-        </a>
+        </Link>
         <ul className="nav nav-pills"style={myStyle}>
           <li className="nav-item">
             <a className="nav-link" href="#scrollspyHeading1">
