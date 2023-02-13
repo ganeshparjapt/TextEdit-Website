@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import{Link} from"react-router-dom"
+import { Link } from "react-router-dom";
 
 export default function Navbar(props) {
   return (
@@ -41,19 +41,7 @@ export default function Navbar(props) {
                 props.mode === "light" ? "dark" : "light"
               } `}
             >
-              <input
-                className="form-check-input"
-                type="checkbox"
-                role="switch"
-                onClick={props.togglemode}
-                id="flexSwitchCheckDefault"
-              />
-              <label
-                className="form-check-label "
-                htmlFor="flexSwitchCheckDefault"
-              >
-                Enable dark mode
-              </label>
+             
             </div>
             <div
               className={`form-check form-switch text-${
