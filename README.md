@@ -1,5 +1,5 @@
 # Getting Started with Create React App
-# Try => https://ganeshparjapt.github.io/TextEdit-Website/
+#  https://ganeshparjapt.github.io/TextEdit-Website/
 
 
 
