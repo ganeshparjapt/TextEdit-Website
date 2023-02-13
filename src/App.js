@@ -46,7 +46,7 @@ function App() {
     <>
        <BrowserRouter>
         <Navbar
-          title="TextChange"
+          title="TextEdit"
           About="About Us"
           mode={mode}
           togglemode={togglemode}
@@ -58,7 +58,7 @@ function App() {
           {/* <Route path="/login" caseSensitive={false} element={<Login />} /> */}
           
 
-        <Route exact path='/' element={<TextForm showAlert={showAlert} Heading="Enter the text hear to analyze below " mode={mode}/> }>
+        <Route exact path='/' element={<TextForm showAlert={showAlert} Heading="Enter the text here to analyze below" mode={mode}/> }>
 
           </Route>
         </Routes>
