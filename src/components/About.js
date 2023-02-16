@@ -3,112 +3,26 @@ import{Link} from"react-router-dom"
 
 
 export default function About(props) {
-  //   const[myStyle,setmyStyle]=useState({
-  
-  //   color: "black",
-  //   backgroundColor: "white",
-    
-  // });
+  let myStyle={
+    color:props.mode === 'dark' ? 'white' : 'black',
+    backgroundColor:  props.mode === 'dark' ? '#2a224a' : 'white'
+  }
 
-  
-  // const toggle = ()=>{
-  //   if(myStyle.color === 'white'){
-  //       setmyStyle({
-  //           color:'black',
-  //           backgroundColor:'white',
-            
-  //       })
-       
-  //   }
-  //   else{
-  //       setmyStyle({
-  //           color:'white',
-  //           backgroundColor:'black',
-  //           border: '2px solid white'
-  //       })
-       
 
-  //   }
-  // }
   return (
-    <>
-    <nav className="container mx-3"
-       
-     
-        >
-      <nav
-        id="navbar-example2"
-        className="navbar bg-body-tertiary px-3 mb-3 container"
-        style={{
-          backgroundColor: props.mode === "light" ? "white" : "#1a1924b8",
-          color: props.mode === "light" ? "black" : "white",
-        }}
-      >
-        <Link className="navbar-brand" to="/about">
-          Navbar
-        </Link>
-        <ul className="nav nav-pills">
-          <li className="nav-item">
-            <a className="nav-link" href="#scrollspyHeading1">
-              First
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#scrollspyHeading2">
-              Second
-            </a>
-          </li>
-          <li className="nav-item dropdown">
-            <a
-              className="nav-link dropdown-toggle"
-              data-bs-toggle="dropdown"
-              href="/"
-              role="button"
-              aria-expanded="false"
-            >
-              Dropdown
-            </a>
-            <ul className="dropdown-menu">
-              <li>
-                <a className="dropdown-item" href="#scrollspyHeading3">
-                  Third
-                </a>
-              </li>
-              <li>
-                <a className="dropdown-item" href="#scrollspyHeading4">
-                  Fourth
-                </a>
-              </li>
-              <li>
-                <hr className="dropdown-divider" />
-              </li>
-              <li>
-                <a className="dropdown-item" href="#scrollspyHeading5">
-                  Fifth
-                </a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </nav>
-      <div
-        data-bs-spy="scroll" 
-        data-bs-target="#navbar-example2"
-        data-bs-root-margin="0px 0px -40%"
-        data-bs-smooth-scroll="true"
-        className="scrollspy-example bg-body-tertiary p-3 rounded-2 mx-3 " 
-        tabindex="0"
+    < >
         
-      >
-        <h4 id="scrollspyHeading1" >First heading</h4>
-        <p >ganesh is good boy</p>
-        <h4 id="scrollspyHeading2">Second heading</h4>
-        <p>...ganesh is good boy</p>
-        <h4 id="scrollspyHeading3">Third heading</h4>
-        <p>...ganesh is good boy</p>
+    <div className="container my-5"> 
+        <h4 id="scrollspyHeading1"   style={myStyle}>What is a Text Editor?</h4>
+        <p   style={myStyle} >A text editor is a simple computer program that allows users to create, change, or edit plain text files. It can be used for creating computer programs, editing the source code of programming languages, </p>
+        <h4 id="scrollspyHeading2"  style={myStyle}>Join the Community</h4>
+        <p  style={myStyle}>sizes and fonts. The editor displays only the characters visible in the file, while word processors add special formatting characters which are not visible in the document. One that only accepts plain text does not allow the user to format that text or add pictures or tables.y</p>
+        <h4 id="scrollspyHeading3"  style={myStyle}>Text editors</h4>
+        <p  style={myStyle}>Text editors can generally be placed into one of two distinct categories: line editors and screen oriented editors. Line editors are not used as frequently as screen-oriented editors, and require that the user specify a particular line of text before making any changes. Screen oriented editors,</p>
+        </div>
       
-      </div>
-      </nav>
+
+    
     </>
   );
 

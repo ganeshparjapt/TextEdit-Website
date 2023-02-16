@@ -60,23 +60,23 @@ export default function TextForm(props) {
               color: props.mode === "light" ? "black" : "white",
             }}
           ></textarea>
-          <button className="btn btn-primary my-3" onClick={handelUpClick}>
+          <button className="btn btn-primary my-1 my-1" onClick={handelUpClick}>
             Convert upper Case
           </button>
           <button
-            className="btn btn-primary my-3 mx-3"
+            className="btn btn-primary my-1 mx-1"
             onClick={handelUpClickToLover}
           >
             Convert to Lover case
           </button>
-          <button className="btn btn-primary my-3 mx-3" onClick={handelCopy}>
+          <button className="btn btn-primary my-1 mx-1" onClick={handelCopy}>
             Copy text
           </button>
-          <button className="btn btn-primary my-3 mx-3" onClick={Remove}>
+          <button className="btn btn-primary my-1 mx-1" onClick={Remove}>
             Clear Text
           </button>
           <button
-            className="btn btn-primary my-3 mx-3"
+            className="btn btn-primary my-1 mx-1"
             onClick={SpaceBetweenOnclick}
           >
             Space between
@@ -90,7 +90,7 @@ export default function TextForm(props) {
         <h2>Your text Summary </h2>
         <p>
           {" "}
-          Count word is : {text.split(" ").length} and Count charecters :{" "}
+          Count word is : {text.split(" ").filter((element)=>{return element.length !== 0. }).length} and Count charecters :{" "}
           {text.length}
         </p>
         <p>{0.008 * text.split(" ").length} Minutes read</p>
