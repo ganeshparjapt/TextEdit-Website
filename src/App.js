@@ -35,12 +35,12 @@ function App() {
       setmode("dark");
       document.body.style.backgroundColor = "#1f1548";
       showAlert("Dark mode has been enabled", "success");
-      document.title = "TestUtiles- Dark";
+      // document.title = "TestUtiles- Dark";
     } else {
       setmode("light");
       document.body.style.backgroundColor = "white";
       showAlert("Light mode has been enabled", "success");
-      document.title = "TestUtiles- Light";
+      // document.title = "TestUtiles- Light";
     }
   };
   return (
@@ -60,7 +60,7 @@ function App() {
 
           
 
-        <Route exact path='/' element={<TextForm showAlert={showAlert} Heading="Enter the text here to analyze below" mode={mode}/> }>
+        <Route exact path='/' element={<TextForm showAlert={showAlert} Heading="Try textEditer - Word Counter, Character Counter,Remove Exter spaces" mode={mode}/> }>
         {/* <TextForm showAlert={showAlert} Heading="Enter the text here to analyze below" mode={mode}/>  */}
 
           </Route>

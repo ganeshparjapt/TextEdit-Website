@@ -18,6 +18,8 @@ export default function TextForm(props) {
     console.log("Remove press");
     let newText = " ";
     setText(newText);
+ 
+  
 
   };
   const SpaceBetweenOnclick = () => {
@@ -47,7 +49,7 @@ export default function TextForm(props) {
         className="container mx-1"
         style={{ color: props.mode === "light" ? "black" : "white" }}
       >
-        <h1>{props.Heading}</h1>
+        <h2>{props.Heading}</h2>
         <div className="mb-1">
           <textarea
             className="form-control"
@@ -60,22 +62,24 @@ export default function TextForm(props) {
               color: props.mode === "light" ? "black" : "white",
             }}
           ></textarea>
-          <button className="btn btn-primary my-1 my-1" onClick={handelUpClick}>
+          <button disabled={text.length === 0} className="btn btn-primary my-1 my-1" onClick={handelUpClick}>
             Convert upper Case
           </button>
           <button
+          disabled={text.length === 0}
             className="btn btn-primary my-1 mx-1"
             onClick={handelUpClickToLover}
           >
             Convert to Lover case
           </button>
-          <button className="btn btn-primary my-1 mx-1" onClick={handelCopy}>
+          <button disabled={text.length === 0} className="btn btn-primary my-1 mx-1" onClick={handelCopy}>
             Copy text
           </button>
-          <button className="btn btn-primary my-1 mx-1" onClick={Remove}>
+          <button disabled={text.length === 0} className="btn btn-primary my-1 mx-1" onClick={Remove}>
             Clear Text
           </button>
           <button
+            disabled={text.length === 0}
             className="btn btn-primary my-1 mx-1"
             onClick={SpaceBetweenOnclick}
           >
@@ -93,9 +97,9 @@ export default function TextForm(props) {
           Count word is : {text.split(" ").filter((element)=>{return element.length !== 0. }).length} and Count charecters :{" "}
           {text.length}
         </p>
-        <p>{0.008 * text.split(" ").length} Minutes read</p>
+        <p>{0.008 * text.split(" ").filter((element)=>{return element.length !== 0. }).length} Minutes read</p>
         <h2>Preview</h2>
-        <p>{text.length > 0 ? text : "Enter somthing to preview hear"}</p>
+        <p>{text.length > 0 ? text : "Nothing to preview hear"}</p>
       </div>
     </>
   );
