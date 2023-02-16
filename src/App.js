@@ -7,10 +7,10 @@ import About from "./components/About";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 import React from "react";
-import {
-  BrowserRouter, Route ,Router,Routes
+ import {
+   BrowserRouter, Route ,Routes
   
-} from "react-router-dom";
+ } from "react-router-dom";
 
 //function 
 //function
@@ -28,7 +28,7 @@ function App() {
   };
   setTimeout(() => {
     setAlert(null);
-  }, 1000);
+  }, 2000);
 
   const togglemode = () => {
     if (mode === "light") {
@@ -56,13 +56,15 @@ function App() {
         <div className="container my-3">
         <Routes>
           <Route exact path="/about" element={<About />} />
-          {/* <Route path="/login" caseSensitive={false} element={<Login />} /> */}
+          {/* <About /> */}
+
           
 
         <Route exact path='/' element={<TextForm showAlert={showAlert} Heading="Enter the text here to analyze below" mode={mode}/> }>
+        {/* <TextForm showAlert={showAlert} Heading="Enter the text here to analyze below" mode={mode}/>  */}
 
           </Route>
-        </Routes>
+         </Routes> 
 
         </div>
 
