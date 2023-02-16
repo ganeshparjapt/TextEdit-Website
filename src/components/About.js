@@ -2,46 +2,52 @@ import React, { useState } from "react";
 import{Link} from"react-router-dom"
 
 
-export default function About() {
-    const[myStyle,setmyStyle]=useState({
+export default function About(props) {
+  //   const[myStyle,setmyStyle]=useState({
   
-    color: "black",
-    backgroundColor: "white",
+  //   color: "black",
+  //   backgroundColor: "white",
     
-  });
-  const[btnText,SetBtnmode]=useState("Enable Dark Mode")
-  
-  const toggle = ()=>{
-    if(myStyle.color === 'white'){
-        setmyStyle({
-            color:'black',
-            backgroundColor:'white',
-            
-        })
-        SetBtnmode("Enable dark Mode")
-    }
-    else{
-        setmyStyle({
-            color:'white',
-            backgroundColor:'black',
-            border: '2px solid white'
-        })
-        SetBtnmode("Enable Light Mode")
+  // });
 
-    }
-  }
+  
+  // const toggle = ()=>{
+  //   if(myStyle.color === 'white'){
+  //       setmyStyle({
+  //           color:'black',
+  //           backgroundColor:'white',
+            
+  //       })
+       
+  //   }
+  //   else{
+  //       setmyStyle({
+  //           color:'white',
+  //           backgroundColor:'black',
+  //           border: '2px solid white'
+  //       })
+       
+
+  //   }
+  // }
   return (
     <>
-    <nav className="container"    style={myStyle}>
+    <nav className="container mx-3"
+       
+     
+        >
       <nav
         id="navbar-example2"
-        className="navbar bg-body-tertiary px-3 mb-3"
-        style={myStyle}
+        className="navbar bg-body-tertiary px-3 mb-3 container"
+        style={{
+          backgroundColor: props.mode === "light" ? "white" : "#1a1924b8",
+          color: props.mode === "light" ? "black" : "white",
+        }}
       >
-        <Link className="navbar-brand" to="/about"style={myStyle}>
+        <Link className="navbar-brand" to="/about">
           Navbar
         </Link>
-        <ul className="nav nav-pills"style={myStyle}>
+        <ul className="nav nav-pills">
           <li className="nav-item">
             <a className="nav-link" href="#scrollspyHeading1">
               First
@@ -62,7 +68,7 @@ export default function About() {
             >
               Dropdown
             </a>
-            <ul className="dropdown-menu"style={myStyle}>
+            <ul className="dropdown-menu">
               <li>
                 <a className="dropdown-item" href="#scrollspyHeading3">
                   Third
@@ -86,27 +92,24 @@ export default function About() {
         </ul>
       </nav>
       <div
-        data-bs-spy="scroll"
+        data-bs-spy="scroll" 
         data-bs-target="#navbar-example2"
         data-bs-root-margin="0px 0px -40%"
         data-bs-smooth-scroll="true"
-        className="scrollspy-example bg-body-tertiary p-3 rounded-2"
+        className="scrollspy-example bg-body-tertiary p-3 rounded-2 mx-3 " 
         tabindex="0"
-        style={myStyle}
+        
       >
-        <h4 id="scrollspyHeading1" style={myStyle}>First heading</h4>
-        <p>ganesh is good boy</p>
-        <h4 id="scrollspyHeading2"style={myStyle}>Second heading</h4>
+        <h4 id="scrollspyHeading1" >First heading</h4>
+        <p >ganesh is good boy</p>
+        <h4 id="scrollspyHeading2">Second heading</h4>
         <p>...ganesh is good boy</p>
-        <h4 id="scrollspyHeading3"style={myStyle}>Third heading</h4>
+        <h4 id="scrollspyHeading3">Third heading</h4>
         <p>...ganesh is good boy</p>
-        <h4 id="scrollspyHeading4"style={myStyle}>Fourth heading</h4>
-        <p>...ganesh is good boy</p>
-        <h4 id="scrollspyHeading5"style={myStyle}>Fifth heading</h4>
-        <p>...ganesh is good boy</p>
-        <button type="button" class="btn btn-primary"onClick={toggle} style={myStyle} >{btnText}</button>
+      
       </div>
       </nav>
     </>
   );
+
 }
