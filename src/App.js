@@ -7,14 +7,10 @@ import About from "./components/About";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 import React from "react";
- import {
-   BrowserRouter, Route ,Routes
-  
- } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-//function 
 //function
-
+//function
 
 function App() {
   const [mode, setmode] = useState("light");
@@ -29,8 +25,19 @@ function App() {
   setTimeout(() => {
     setAlert(null);
   }, 2000);
+  const classrbodyclass = ()=>{
+    document.body.classList.remove('bg-dark')
+    document.body.classList.remove('bg-light')
+    document.body.classList.remove('bg-warning')
+    document.body.classList.remove('bg-success')
+    document.body.classList.remove('bg-danger')
+    document.body.classList.remove('bg-primary')
+  }
 
-  const togglemode = () => {
+  const togglemode = (cls) => {
+    classrbodyclass();
+    document.body.classList.add('bg-'+cls)
+    console.log(cls)
     if (mode === "light") {
       setmode("dark");
       document.body.style.backgroundColor = "#1f1548";
@@ -45,7 +52,7 @@ function App() {
   };
   return (
     <>
-       <BrowserRouter>
+      <BrowserRouter>
         <Navbar
           title="TextEdit"
           About="About Us"
@@ -54,24 +61,27 @@ function App() {
         />
         <Alet Alert={alert} />
         <div className="container my-3">
-        <Routes>
-          <Route exact path="/about" element={<About  mode={mode}/>} />
-          {/* <About /> */}
+          <Routes>
+            <Route exact path="/about" element={<About mode={mode} />} />
+            {/* <About /> */}
 
-          
-
-        <Route exact path='/' element={<TextForm showAlert={showAlert} Heading="Try textEditer - Word Counter, Character Counter,Remove Exter spaces" mode={mode}/> }>
-        {/* <TextForm showAlert={showAlert} Heading="Enter the text here to analyze below" mode={mode}/>  */}
-
-          </Route>
-         </Routes> 
-
+            <Route
+              exact
+              path="/"
+              element={
+                <TextForm
+                  showAlert={showAlert}
+                  Heading="Try textEditer - Word Counter, Character Counter,Remove Exter spaces"
+                  mode={mode}
+                />
+              }
+            >
+              {/* <TextForm showAlert={showAlert} Heading="Enter the text here to analyze below" mode={mode}/>  */}
+            </Route>
+          </Routes>
         </div>
-
-        </BrowserRouter>
-        </>
-         
-  
+      </BrowserRouter>
+    </>
   );
 }
 

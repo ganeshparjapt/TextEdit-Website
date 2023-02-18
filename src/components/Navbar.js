@@ -36,7 +36,15 @@ export default function Navbar(props) {
                 </Link>
               </li>
             </ul>
-            <div
+            <div className="d-flex">
+            <div className="bg-primary rounded mx-2"onClick={()=>{props.togglemode('primary')}} style={{height:'25px' ,width:'25px', cursor : "pointer"}}></div>
+            <div className="bg-danger rounded mx-2"onClick={()=>{props.togglemode('danger')}} style={{height:'25px' ,width:'25px', cursor : "pointer"}}></div>
+            <div className="bg-success rounded mx-2"onClick={()=>{props.togglemode('success')}} style={{height:'25px' ,width:'25px', cursor : "pointer"}}></div>
+            <div className="bg-warning rounded mx-2"onClick={()=>{props.togglemode('warning')}} style={{height:'25px' ,width:'25px', cursor : "pointer"}}></div>
+            <div className="bg-ligth rounded mx-2"onClick={()=>{props.togglemode('light')}} style={{height:'25px' ,width:'25px', cursor : "pointer",border :'solid black'}}></div>
+            <div className="bg-dark rounded mx-2"onClick={()=>{props.togglemode('dark')}} style={{height:'25px' ,width:'25px', cursor : "pointer"}}></div>
+            </div>
+            {/* <div
               className={`form-check form-switch text-${
                 props.mode === "light" ? "dark" : "light"
               } `}
@@ -56,7 +64,7 @@ export default function Navbar(props) {
               >
                 Enable dark mode
               </label>
-            </div>
+            </div> */}
             <div
               className={`form-check form-switch text-${
                 props.mode === "light" ? "dark" : "light"
