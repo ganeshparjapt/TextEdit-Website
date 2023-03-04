@@ -97,7 +97,7 @@ export default function TextForm(props) {
           Count word is : {text.split(" ").filter((element)=>{return element.length !== 0. }).length} and Count charecters :{" "}
           {text.length}
         </p>
-        <p>{0.008 * text.split(" ").filter((element)=>{return element.length !== 0. }).length} Minutes read</p>
+        <p>{0.008 * text.split(/\s+/).filter((element)=>{return element.length !== 0. }).length} Minutes read</p>
         <h2>Preview</h2>
         <p>{text.length > 0 ? text : "Nothing to preview hear"}</p>
       </div>
