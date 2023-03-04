@@ -43,11 +43,14 @@ function App() {
       document.body.style.backgroundColor = "#1f1548";
       showAlert("Dark mode has been enabled", "success");
       // document.title = "TestUtiles- Dark";
+      console.log("if par run your  cls is = "+ cls)
     } else {
-      setmode("light");
+      setmode("dark");
       document.body.style.backgroundColor = "white";
       showAlert("Light mode has been enabled", "success");
       // document.title = "TestUtiles- Light";
+      console.log("else par run your  cls is = "+ cls)
+
     }
   };
   return (
