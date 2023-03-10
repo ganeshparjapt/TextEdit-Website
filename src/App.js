@@ -74,7 +74,7 @@ function App() {
               element={
                 <TextForm
                   showAlert={showAlert}
-                  Heading="Try textEditer - Word Counter, Character Counter,Remove Exter spaces"
+                  Heading="Try Text-Editer - Word Counter, Character Counter,Remove Exter spaces"
                   mode={mode}
                 />
               }
