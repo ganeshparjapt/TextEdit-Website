@@ -1,13 +1,11 @@
-// import logo from './logo.svg';
 import { useState } from "react";
 
 import "./App.css";
 import Alet from "./components/Alet";
-import About from "./components/About";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 
 //function
 //function
@@ -24,7 +22,7 @@ function App() {
   };
   setTimeout(() => {
     setAlert(null);
-  }, 2000);
+  }, 3000);
   const classrbodyclass = ()=>{
     document.body.classList.remove('bg-dark')
     document.body.classList.remove('bg-light')
@@ -55,35 +53,32 @@ function App() {
   };
   return (
     <>
-      <BrowserRouter>
+      
         <Navbar
           title="TextEdit"
-          About="About Us"
+       
           mode={mode}
           togglemode={togglemode}
         />
         <Alet Alert={alert} />
         <div className="container my-3">
-          <Routes>
-            <Route exact path="/about" element={<About mode={mode} />} />
-            {/* <About /> */}
+      
+      
+        
 
-            <Route
-              exact
-              path="/"
-              element={
+          
+            
                 <TextForm
                   showAlert={showAlert}
                   Heading="Try Text-Editer - Word Counter, Character Counter,Remove Exter spaces"
                   mode={mode}
                 />
-              }
-            >
-              {/* <TextForm showAlert={showAlert} Heading="Enter the text here to analyze below" mode={mode}/>  */}
-            </Route>
-          </Routes>
+              
+            
+        
+        
         </div>
-      </BrowserRouter>
+     
     </>
   );
 }
